@@ -4,6 +4,8 @@ pub enum Error {
     UnableToConnect(LapinError),
     ChannelCreationFailed(LapinError),
     QueueDeclareFailed(LapinError),
+    PublishFailed(LapinError),
+    AckNotReceived(LapinError),
 }
 
 impl std::fmt::Display for Error {
@@ -15,6 +17,10 @@ impl std::fmt::Display for Error {
                 write!(f, "Channel creation failed: {}", err),
             Error::QueueDeclareFailed(err) =>
                 write!(f, "Failed to declare queue: {}", err),
+            Error::PublishFailed(err) =>
+                write!(f, "Failed to publish a message: {}", err),
+            Error::AckNotReceived(err) =>
+                write!(f, "No confirmation received for sent message: {}", err),
         }
     }
 }

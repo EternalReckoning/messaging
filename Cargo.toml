@@ -1,9 +1,10 @@
 [package]
 name = "eternalreckoning-messaging"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Henry Carlson <henry.carlson@gmail.com>"]
 edition = "2018"
 
 [dependencies]
 lapin = "~0.39"
+log = "~0.4"
 percent-encoding = "~2.1"
